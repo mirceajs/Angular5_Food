@@ -1,0 +1,32 @@
+<div>
+  <!--start login-form-->
+  <section class="login-form text-center w-100 row no-gutters align-items-center justify-content-around">
+      <div class="overlay w-100 h-100 d-none d-sm-block">
+          <img src="assets/img/login-bg.png" alt="" class="d-inline-block w-100 h-100">
+      </div>
+      <div class="form-wrapper col-auto">
+          <img src="assets/img/logo.svg" alt="" class="logo d-block d-sm-none">
+          <h2 class="h1">Welcome!</h2>
+          <p class="">Please sign in to continue</p>
+          <form class="text-left">
+              <div class="form-group">
+                  <label class="col-form-label font-source" for="email">Email</label>
+                  <input type="email" class="form-control" id="email" 
+                  [(ngModel)]="username" name = "username" placeholder="email id">
+              </div>
+              <div class="form-group">
+                  <label class="col-form-label font-source" for="password">Password</label>
+                  <input type="password" class="form-control" id="password" 
+                  [(ngModel)]="password" name = "password" placeholder="***********">
+              </div>
+              <p class="" style="color: red; font-size: 16px">{{authService.authErrorMessage}}</p>
+              <a ><p class="text-right w-100 forget">Forgot password?</p></a>
+              <button type="submit" class="btn mybutton text-uppercase w-100"(click)="login()">LOG IN</button>
+          </form>
+      </div>
+  </section>
+  <!--end login-form-->
+  <!--js files-->
+  <!-- 1- jQuery -->
+
+</div>

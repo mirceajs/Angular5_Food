@@ -1,0 +1,73 @@
+<!--start section wrapper-->
+<div class="sections-wrapper" >
+    <!--start recommended section-->
+    <section class="recommended order-section-active">
+        <div class="container">
+            <h2 class="h1 text-capitalize">recommended for you</h2>
+            <!--start rec-dish div-->
+            <div class="rec-dish">
+                <!--start row div-->
+                <div class="row no-gutters h-100">
+                    <div class="rec-image col-lg-6 col-md-12 wow bounceInRight" data-wow-offset="10">
+                        <img *ngIf="recommendedItem" class="w-100 h-100" src={{recommendedItem.imageLink}} alt="">
+                    </div>
+                    <div class="rec-desc col-lg-6 col-md-12 wow bounceInLeft" data-wow-offset="10">
+                        <h3 *ngIf="recommendedItem" class="rec-name">{{recommendedItem.name}}</h3>
+                        <div class="rec-features row no-gutters justify-content-between">
+                            <div *ngIf="recommendedItem" class="col-auto rec-spec">Quantity: {{recommendedItem.quantity}}g</div>
+                            <div class="col-auto seperate-line"></div>
+                            <div *ngIf="recommendedItem" class="col-auto rec-spec">Calories: {{recommendedItem.calories}}</div>
+                            <div class="col-auto seperate-line"></div>
+                            <div *ngIf="recommendedItem" class="col-auto rec-spec">{{recommendedItem.foodCategory}}</div>
+                        </div>
+                        <div class="rec-description">
+                            <h6 class="m-0 text-capitalize">description: </h6>
+                            <p *ngIf="recommendedItem" class="p-0">{{recommendedItem.description}}</p>
+                            <h6 class="m-0 text-capitalize">Ingredients :</h6>
+                            <p *ngIf="recommendedItem" class="p-0">{{recommendedItem.ingredientList}}</p>
+                        </div>
+                        <div class="add-to-cart row justify-content-between align-items-center">
+                            <div class="col-8">
+                                <div *ngIf="recommendedItem" class="float-left rec-price">₹ {{recommendedItem.price}}</div>
+                                <div class="set-amount float-right">
+                                    <span class="decrease" (click)="decreaseCount()">-</span>
+                                    <span class="amount">{{count}}</span>
+                                    <span class="increase" (click)="increaseCount()">+</span>
+                                </div>
+                            </div>
+                            <button class="confirm-adding btn mybutton text-uppercase col-4">
+                                <span class="added">&#10004;  added</span>
+                                <span class="not-added" (click)="addToCart(recommendedItem)">add to basket</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--end row div-->
+            </div>
+            <!--end rec-dish div-->
+            <h2 class="h1">From the menu</h2>
+            <div class="row no-gutters justify-content-between">
+                <div class="col-auto single-dish wow bounceInRight" data-wow-offset="10" *ngFor="let menuItem of menuService.menuItems">
+                    <img class="" src={{menuItem.imageLink}} alt="">
+                    <h4 class="dish-name">
+                        <img class="menu-symbol" src="assets/img/non.svg" alt="" *ngIf="menuItem.foodCategory == 'NON_VEGETARIAN'">
+                        <img class="menu-symbol" src="assets/img/veg.svg" alt="" *ngIf="menuItem.foodCategory == 'VEGETARIAN'">
+                        <img class="menu-symbol" src="assets/img/egg.svg" alt="" *ngIf="menuItem.foodCategory == 'EGGETERIAN'">
+                        {{menuItem.name}}
+                    </h4>
+                    <span class="dish-weight">{{menuItem.quantity}} g</span>
+                    <span class="dot">.</span>
+                    <span class="dish-energy">{{menuItem.calories}} cal</span>
+                    <div class="line"></div>
+                    <div class="price d-inline-block float-left">₹ {{menuItem.price}}</div>
+                    <span class="add float-right"  (click)="selectMenuItem(menuItem)">+</span>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end recommended section-->
+
+
+</div>
+<!--end the sections wrapper div-->

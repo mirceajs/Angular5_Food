@@ -1,0 +1,29 @@
+<div>
+  <!--start navbar-->
+  <nav>
+      <div class="container">
+          <div class="row no-gutters justify-content-between">
+              <div class="nav-item col-auto text-right text-uppercase" (click)="goLeft()">
+                  <div class="left-arrow">
+                      <span></span>
+                      <span></span>
+                  </div>
+              </div>
+              <div data-class=".recommended" class="nav-item col-auto text-center text-uppercase nav-active" (click)="gotoRecommend()">
+                  <span class="w-100 h-100">recommended</span>
+              </div>
+              <div class="nav-item col-auto text-center text-uppercase" *ngFor="let cuisine of cuisines"
+              (click)="gotoMenu(cuisine)">
+                  <span class="w-100 h-100">{{cuisine}}</span>
+              </div>
+              <div data-class="." class="nav-item col-auto text-right text-uppercase" (click)="goRight()">
+                  <div class="right-arrow">
+                      <span></span>
+                      <span></span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </nav>
+  <!--end navbar-->
+</div>

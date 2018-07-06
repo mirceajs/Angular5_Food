@@ -1,0 +1,605 @@
+/*
+start seal your meal site ;
+
+Dashboard
+
+the coder : Siddharth tankariya;
+
+*/
+
+/****************************************************
+
+                    general
+
+****************************************************/
+
+* {
+    -webkit-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    font-family: sans-serif;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+.h1,
+.h2{
+    font-family: sans-serif;
+    font-size: 28px;
+    margin: 10px 0 30px;
+}
+
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.mybutton {
+    background: -webkit-gradient(linear, left top, right top, from(#FF7920), to(#F79432));
+    background: linear-gradient(to right, #FF7920, #F79432);
+    color: #fff;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+/*start back arrow*/
+
+.back {
+    position: relative;
+    width: 18px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.back span {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    display: block;
+    background: #4d4d4d;
+    height: 2.5px;
+    border-radius: 2px;
+    width: 10px;
+    -webkit-transform-origin: right center;
+    transform-origin: left center;
+}
+
+.back span:nth-child(1) {
+    top: 10px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.back span:nth-child(2) {
+    width: 18px;
+}
+
+.back span:nth-child(3) {
+    top: 8px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/*end back arrow*/
+
+/*start left arrow*/
+.left-arrow {
+    position: relative;
+    cursor: pointer;
+}
+
+.left-arrow span {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    display: block;
+    background: #ffffff;
+    height: 2.5px;
+    border-radius: 2px;
+    width: 15px;
+    -webkit-transform-origin: right center;
+    transform-origin: left center;
+}
+
+.left-arrow span:nth-child(1) {
+    top: 10px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.left-arrow span:nth-child(2) {
+    top: 8px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/*end left arrow*/
+/*start right arrow*/
+.right-arrow {
+    position: relative;
+    cursor: pointer;
+}
+
+.right-arrow span {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    display: block;
+    background: #ffffff;
+    height: 2.5px;
+    border-radius: 2px;
+    width: 15px;
+    -webkit-transform-origin: right center;
+    transform-origin: left center;
+}
+
+.right-arrow span:nth-child(1) {
+    top: 8px;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.right-arrow span:nth-child(2) {
+    top: 10px;
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+}
+/*end right arrow*/
+.wow{
+    visibility: hidden;
+}
+
+/****************************************************
+
+                    header
+
+****************************************************/
+
+header {
+    height: 75px;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1001;
+    background: #fff;
+}
+
+header .logo-image img {
+    width: 280px;
+}
+
+header .profile {
+    position: relative;
+}
+
+header .profile .cart-icon {
+    position: relative;
+    width: 25px;
+    cursor: pointer;
+}
+
+header .profile .cart-icon img {
+    width: 25px;
+    height: 25px;
+    -webkit-transition: .5s all ease-in-out;
+    transition: .5s all ease-in-out
+}
+
+header .profile .cart-icon:hover img {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+}
+
+header .profile .cart-icon span {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 23px;
+    height: 23px;
+    color: #fff;
+    background: #F8902F;
+    border-radius: 50%;
+    text-align: center;
+}
+
+header .profile .avatar {
+    cursor: pointer;
+}
+
+header .profile .avatar img {
+
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    margin: 0 10px 0 50px;
+}
+
+.arrow-down {
+    position: relative;
+    width: 20px;
+    height: 10px;
+}
+
+.arrow-down span {
+    position: absolute;
+    width: 15px;
+    top: 2px;
+    height: 3px;
+    border-radius: 1px;
+    background: #848282;
+    -webkit-transition: .4s all ease-in-out;
+    transition: .4s all ease-in-out;
+
+}
+
+.arrow-down span:nth-child(1) {
+    left: 0;
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.arrow-down span:nth-child(2) {
+    right: 0;
+    -webkit-transform-origin: right center;
+    transform-origin: right center;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+header .profile .avatar .profile-open span {
+    background: #F8902F;
+    top: 10px;
+}
+
+header .profile .avatar .profile-open span:nth-child(1) {
+    -webkit-transform: rotate(315deg);
+    transform: rotate(315deg);
+}
+
+header .profile .avatar .profile-open span:nth-child(2) {
+    -webkit-transform: rotate(-315deg);
+    transform: rotate(-315deg);
+}
+
+/*profile ooptions div*/
+
+.profile-option {
+    position: absolute;
+    top: 62px;
+    width: 250px;
+    height: 370px;
+    background: #fff;
+    z-index: 4;
+    padding: 20px;
+    visibility: hidden;
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+}
+
+.profile-option::before {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 11px solid #fff;
+    -webkit-box-shadow: -2px 2px 3px -1px rgba(57, 73, 76, 0.35);
+    box-shadow: -2px 2px 3px -1px rgba(57, 73, 76, 0.35);
+    -webkit-transform: translateY(-30px) rotate(135deg);
+    transform: translateY(-30px) rotate(135deg);
+    left: 200px;
+}
+
+.pro-open {
+    visibility: visible;
+}
+
+.pro-option-header .pro-image {
+    width: 55px;
+    height: 55px;
+}
+
+.pro-option-header .pro-name {
+    width: 140px;
+}
+
+.pro-option-header .pro-name h3 {
+    margin-top: 5px;
+    font-size: 17px;
+    color: #4D4D4D;
+}
+
+.pro-option-header .pro-name h4 {
+    font-size: 16px;
+    color: #848282;
+}
+
+.pro-options-body > div {
+    height: 37px;
+    font-size: 15px;
+    color: #848282;
+    cursor: pointer;
+    line-height: 35px;
+    border-radius: 5px;
+    -webkit-transition: .25s all ease-out;
+    transition: .25s all ease-out;
+}
+
+.pro-options-body > div:hover {
+    padding-left: 5px;
+    background: -webkit-gradient(linear, left top, right top, from(#efefef), to(#fff));
+    background: linear-gradient(to right, #efefef, #fff);
+}
+
+.log-out {
+    height: 37px;
+    font-size: 17px;
+    color: #575757;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/*start custom switch*/
+
+/* The switch - the box around the slider */
+
+.pro-options-body {
+    -webkit-animation-delay: .6s;
+    animation-delay: .6s;
+}
+
+.pro-options-body .custom-switch {
+    height: 20px;
+    margin-top: 10px;
+}
+
+.pro-options-body .switch {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    margin-top: 6px;
+    height: 10px;
+}
+
+/* Hide default HTML checkbox */
+
+.pro-options-body .switch input {
+    display: none;
+}
+
+/* The slider */
+
+.pro-options-body .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.pro-options-body .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: -5px;
+    background-color: #E1E1E1;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.pro-options-body input:checked + .slider:before {
+    background-color: #FF7A21;
+}
+
+.pro-options-body input:focus + .slider {
+    -webkit-box-shadow: 0 0 1px #FF7A21;
+    box-shadow: 0 0 1px #FF7A21;
+}
+
+.pro-options-body input:checked + .slider:before {
+    -webkit-transform: translateX(14px);
+    transform: translateX(14px);
+}
+
+/* Rounded sliders */
+
+.pro-options-body .slider.round {
+    border-radius: 34px;
+}
+
+.pro-options-body .slider.round:before {
+    border-radius: 50%;
+}
+
+/*end custom switch*/
+
+/* header responsive*/
+
+@media (min-width: 576px) and (max-width: 767px) {
+    header {
+        padding: 10px 18px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    header {
+        padding: 10px 18px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .profile-option {
+        left: -90px;
+    }
+}
+
+/****************************************************
+
+                    main section
+
+****************************************************/
+
+body section {
+    background: #F1F1F1;
+
+}
+
+
+
+/****************************************************
+
+                    footer
+
+****************************************************/
+
+footer {
+    height: 70px;
+    background: #D0D0D0;
+}
+
+footer .sitemap .col-auto {
+    max-width: 100%;
+    margin-left: 50px;
+}
+
+footer .sitemap .col-auto a {
+    color: #4D4D4D
+}
+
+/*responsive*/
+
+@media (max-width: 575px) {
+    footer {
+        display: none;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    footer .container > .row {
+        width: 100%;
+        height: 35px !important;
+    }
+    footer .sitemap .col-auto {
+        margin-left: 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    footer .sitemap .col-auto {
+        margin-left: 30px;
+    }
+}
+
+/****************************************************
+
+                loading section
+
+****************************************************/
+
+/*preloader*/
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.loading-animation {
+    position: absolute;
+    display: block;
+    font-size: 0;
+    top: 50%;
+    left: 50%;
+    margin-left: -32px;
+    margin-top: -32px;
+    width: 96px;
+    height: 96px;
+    color: #FF7A21;
+    visibility: visible;
+}
+
+.loading-animation > div {
+    position: absolute;
+    display: inline-block;
+    float: none;
+    background-color: #FF7A21;
+    border: 0 solid #FF7A21;
+    top: 0;
+    left: 0;
+    width: 96px;
+    height: 96px;
+    background: transparent;
+    border-width: 6px;
+    border-radius: 100%;
+    opacity: 0;
+    -webkit-animation: loading 1.25s 0s infinite cubic-bezier(.21, .53, .56, .8);
+    animation: loading 1.25s 0s infinite cubic-bezier(.21, .53, .56, .8);
+}
+
+.loading-animation > div:nth-child(1) {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+.loading-animation > div:nth-child(2) {
+    -webkit-animation-delay: .25s;
+    animation-delay: .25s;
+}
+
+.loading-animation > div:nth-child(3) {
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
+}
+
+/*
+ * Animation
+ */
+
+@-webkit-keyframes loading {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(.1);
+        transform: scale(.1);
+    }
+    70% {
+        opacity: .5;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    95% {
+        opacity: 0;
+    }
+}
+
+@keyframes loading {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(.1);
+        transform: scale(.1);
+    }
+    70% {
+        opacity: .5;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    95% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,46 @@
+.order-history {
+    margin-top: 75px;
+    padding: 5px 0;
+    height: 776px;
+}
+
+.order-history h2 {
+    margin: 20px 0;
+}
+
+.one-order {
+    background: #fff;
+    padding: 20px 18px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    margin-bottom: 20px;
+}
+
+.one-order .one-order-date {
+    font-size: 14px;
+    color: #a5a5a5;
+    margin: 0 10px 2px 0;
+}
+
+.one-order .see-status a {
+    color: #ff7920
+}
+
+.one-order .one-order-name {
+    font-size: 17px;
+    color: #4d4d4d;
+}
+
+.one-order .one-order-price {
+    font-size: 19px;
+    color: #4d4d4d;
+    margin: 0;
+}
+
+.one-order .one-order-price.free {
+    color: #ff7920
+}
+@media (min-width: 576px) and (max-width: 991px) {
+    .order-history {
+        height: 830px;
+    }
+}

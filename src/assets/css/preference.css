@@ -1,0 +1,161 @@
+/****************************************************
+
+                    preference section
+
+****************************************************/
+
+.preference {
+    padding: 100px 0 25px;
+    height: 800px;
+}
+
+.preference h2 {
+    color: #4B4B4B;
+}
+
+.preference .choice {
+    width: 250px;
+    margin: 10px 0;
+    height: 56px;
+    border: 1px solid #fff;
+    -webkit-box-shadow: 0 2px 4px #c4c4c4;
+    box-shadow: 0 2px 4px #c4c4c4;
+    background: #fff;
+    padding: 15px;
+    -webkit-transition: .2s all ease-in-out;
+    transition: .2s all ease-in-out;
+}
+
+.preference .choice:hover {
+    border-color: #F8902F;
+}
+
+/*start custom check mark*/
+
+/* Customize the label (the mark-container) */
+
+.preference .choice .mark-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+
+.preference .choice .mark-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+
+.preference .choice .checkmark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #D0D0D0;
+    border-radius: 2px;
+    -webkit-transition: .2s all ease-in-out;
+    transition: .2s all ease-in-out;
+}
+
+/* On mouse-over, add a grey background color */
+
+.preference .choice .mark-container:hover input ~ .checkmark {
+    border-color: #F8902F;
+}
+
+/* When the checkbox is checked, add a blue background */
+
+.preference .choice .mark-container input:checked ~ .checkmark,
+.preference .choice .mark-container input:checked ~ .choice {
+    border-color: #F8902F;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.preference .choice .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+
+.preference .choice .mark-container input:checked ~ .checkmark:after {
+    display: block;
+    color: #F8902F;
+}
+
+/* Style the checkmark/indicator */
+
+.preference .choice .mark-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #F8902F;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/*end custom check mark*/
+
+.preference .choice .choice-name {
+    font-size: 16px;
+    color: #4D4D4D;
+    position: absolute;
+}
+
+.preference button {
+    width: 270px;
+    height: 50px;
+    margin: 22px 0 60px 0;
+}
+
+.preference button[disabled] {
+    border: 1px solid #D0D0D0;
+    color: #D0D0D0;
+    background: rgba(0, 0, 0, 0);
+}
+
+/*responsive utilities*/
+
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .preference {
+        height: 933px;
+    }
+    .preference .choice {
+        width: 150px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .preference {
+        height: 952px;
+    }
+    .preference .choice {
+        width: 200px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .preference {
+        height: ;
+    }
+    .preference .choice {
+        width: 190px;
+    }
+}

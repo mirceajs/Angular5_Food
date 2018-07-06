@@ -1,0 +1,73 @@
+<!--start header-->
+<div>
+    asdfasdf
+  <header>
+      <div class="container">
+          <div class="row no-gutters justify-content-between">
+              <div class="col-4 logo-image">
+                  <img src="assets/img/logo.svg" alt="">
+              </div>
+              <div class="col-4 col-lg-2 profile align-self-center">
+                  <div class="row no-gutters align-items-center justify-content-end">
+                      <div class="cart-icon col-auto" (click) = "gotoCart()">
+                          <img src="assets/img/cart.svg" alt="">
+                          <span class="value"></span>
+                      </div>
+                      <div class="avatar col-auto">
+                          <img src="assets/img/profile.png" alt="" class="">
+                          <div class="d-inline-block arrow-down profile-opener">
+                              <span class="d-inline-block"></span><span class="d-inline-block"></span>
+                          </div>
+                      </div>
+                  </div>
+                  <!--profile options div-->
+                  <div class="profile-option">
+                          <div class="pro-option-header">
+                              <div class="row no-gutters justify-content-between">
+                                  <div class="col-auto pro-image">
+                                      <img class="w-100 h-100" src="assets/img/profile.png" alt="">
+                                  </div>
+                                  <div class="col-auto pro-name">
+                                      <h3>{{authService.getUserName()}}</h3>
+                                      <h4>Employee</h4>
+                                  </div>
+                              </div>
+                          </div>
+                          <hr>
+                          <div class="pro-options-body">
+                              <div (click)="changePassword()">Change Password</div>
+                              <div class="preference-direct">Update Preferences</div>
+                              <div>Rigid Preference
+                                  <div class="custom-switch d-inline-block float-right">
+                                      <label class="switch">
+                                          <!-- <input type="checkbox" [checked]="authService.userDetails.rigidPreference" (change)="togglePreference()"> -->
+                                          <input type="checkbox" [checked]="true" (change)="togglePreference()">
+                                          <span class="slider round"></span>
+                                      </label>
+                                  </div>
+                              </div>
+                              <div>Automatic Delivery
+                                  <div class="custom-switch d-inline-block float-right">
+                                      <label class="switch">
+                                          <!-- <input type="checkbox" [checked]="authService.userDetails.autoRecommend" (change)="togglePreference()"> -->
+                                          <input type="checkbox" [checked]="false" (change)="togglePreference()">
+                                          <span class="slider round"></span>
+                                      </label>
+                                  </div>
+                              </div>
+                              <div>Working Days</div>
+                          </div>
+                          <hr>
+                          <div class="log-out" (click)="logout()">log out</div>
+                      </div>
+                  </div>
+                  <!--profile options div end-->
+              </div>
+              <!--profile div end-->
+          </div>
+      </header>
+      <!--end header-->
+      
+      <!--js files-->
+
+  </div>

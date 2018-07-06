@@ -1,0 +1,110 @@
+/****************************************************
+
+                    login-form section
+
+****************************************************/
+
+.login-form {
+    position: relative;
+    overflow: hidden;
+}
+
+.login-form .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000;
+}
+
+.login-form .form-wrapper {
+    width: 370px;
+    background: #fff;
+    position: relative;
+    z-index: 6;
+    padding: 23px;
+}
+
+.login-form .form-wrapper h2 {
+    color: #14141D;
+    font-size: 30px;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+
+.login-form .form-wrapper p {
+    color: #848282;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.login-form .form-wrapper p.forget {
+    font-size: 14px;
+}
+
+.login-form .form-wrapper .form-group {
+    margin-top: 20px;
+}
+
+.login-form .form-wrapper form label {
+    color: rgba(75, 75, 75, .8);
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.login-form input {
+    border: none;
+    border-radius: 0;
+    border-bottom: .1px solid #808080;
+    padding-left: 0;
+}
+
+/*responsie utilities*/
+
+@media (max-width: 575px) {
+    .login-form {
+        background: #fff;
+        height: 600px;
+        padding: 0;
+    }
+
+    .login-form .overlay {
+        display: none;
+    }
+
+    .login-form .form-wrapper {
+        width: 100%;
+        background: #fff;
+        padding: 25px;
+        text-align: left;
+    }
+
+    .login-form .form-wrapper img {
+        height: 100px;
+        width: 95%;
+        margin-bottom: 40px;
+    }
+    .login-form .form-wrapper h2 {
+        font-size: 32px;
+    }
+
+    .login-form .form-wrapper .form-group {
+        margin-top: 40px;
+    }
+
+    .login-form .form-wrapper form label {
+        color: rgba(75, 75, 75, .8);
+        margin: 10px 0;
+        font-size: 18px;
+        font-weight: 600
+    }
+
+    .login-form input {
+        border: none;
+        border-radius: 0;
+        border-bottom: .1px solid #808080;
+    }
+}

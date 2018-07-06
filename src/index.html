@@ -1,0 +1,92 @@
+
+  
+  <!DOCTYPE html>
+
+  <!--
+  
+    Looks like we have an Enginner in the Family. 
+    You’ve made it into our code. If it’s a bug you’re looking for, do keep at it
+    and let us know if you have found one.We Appreciate that. If you need a new Job
+    in the future of Artificial Intelligence in Food Industry, well "Call me"
+  
+    Email support@sealurmeal.com if you’ve found a bug.
+    visit https://angel.co/sealurmeal.
+  -->
+  
+  <html>
+  <head lang="en">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <base href="/">
+      <title>SealYourMeal</title>
+      <!--css files-->
+      <link rel="stylesheet" href="assets/vendor/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/vendor/css/animate.min.css">
+      <link rel="stylesheet" href="assets/css/cart.css">
+      <link rel="stylesheet" href="assets/css/dashboard-main.css">
+      <link rel="stylesheet" href="assets/css/login.css">
+      <link rel="stylesheet" href="assets/css/main.css">
+      <link rel="stylesheet" href="assets/css/menu.css">
+      <link rel="stylesheet" href="assets/css/order-history.css">
+      <link rel="stylesheet" href="assets/css/preference.css">
+      <link rel="stylesheet" href="assets/css/tracking.css">
+      
+      <!--site icon-->
+      <link rel="icon" href="assets/img/sealurmeal.ico">
+      <!--google fonts-->
+      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+  </head>
+  <body>
+  
+    <app-root></app-root>
+  
+  <!-- inject:js -->
+  <script src="assets/vendor/js/lib.min.js"></script>
+  <script src="assets/vendor/js/jquery-3.2.1.min.js"></script>
+  <script src="assets/vendor/js/popper.min.js"></script>
+  <script src="assets/vendor/js/bootstrap.min.js"></script>
+  <script src="assets/vendor/js/jquery.nicescroll.min.js"></script>
+  <script src="assets/vendor/js/wow.min.js"></script>
+  
+
+  
+  <script>
+    // loading screen
+    $(window).on("load", function() {
+        "use strict";
+        $(".loading-animation").fadeOut(400, function() {
+            $(this).parent().fadeOut(400, function() {
+                $(this).remove();
+            });
+        });
+    });
+    
+    $(document).ready(function() {
+        "use strict";
+
+        // trigger niceScroll
+        $("html").niceScroll({
+            horizrailenabled: false,
+            cursorcolor: "#FF7920",
+            cursorborder: "none"
+        });
+        // set the height of the main section
+        var winHeight =$(window).height(); 
+        if (winHeight > 600){
+            $(".login-form").outerHeight(winHeight);
+        } else {
+            $(".login-form").outerHeight(600);
+        }
+    });
+  
+  </script>
+  
+  <script>
+    new WOW().init();
+  </script>
+  
+  <!-- endinject -->
+  
+  </body>
+  </html>
+  

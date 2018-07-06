@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.657 11.314">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4b4b4b;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="Back" transform="translate(-0.343 -0.343)">
+    <path id="Combined-Shape" class="cls-1" d="M4.172,5H16V7H4.172l3.243,3.243L6,11.657.343,6l.707-.707L6,.343,7.414,1.757Z"/>
+  </g>
+</svg>

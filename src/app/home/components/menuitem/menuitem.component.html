@@ -1,0 +1,120 @@
+<!--start single-meal section-->
+<section class="single-meal">
+  <div class="container">
+      <h2 class="h1 text-capitalize">
+          <div class="back d-inline-block">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+          meal details
+      </h2>
+      <!--start rec-dish div-->
+      <div class="rec-dish">
+          <!--start row div-->
+          <div class="row no-gutters h-100">
+              <div class="rec-image col-lg-6 col-md-12 bounceInRight" data-wow-offset="10">
+                  <img class="w-100 h-100" *ngIf = "selectedMenuItem" src={{selectedMenuItem.imageLink}} alt="">
+              </div>
+              <div class="rec-desc col-lg-6 col-md-12 bounceInLeft" data-wow-offset="10">
+                  <h3 class="rec-name" *ngIf = "selectedMenuItem">
+                      {{selectedMenuItem.name}}
+                  </h3>
+                  <div class="rec-features row no-gutters justify-content-between">
+                      <div class="col-auto rec-spec" *ngIf = "selectedMenuItem">Quantity: {{selectedMenuItem.quantity}}g</div>
+                      <div class="col-auto seperate-line"></div>
+                      <div class="col-auto rec-spec" *ngIf = "selectedMenuItem">Calories: {{selectedMenuItem.calories}}</div>
+                      <div class="col-auto seperate-line"></div>
+                      <div class="col-auto rec-spec" *ngIf = "selectedMenuItem">{{selectedMenuItem.foodCategory}}</div>
+                  </div>
+                  <div class="rec-description">
+                      <h6 class="m-0 text-capitalize">description: </h6>
+                      <p class="p-0" *ngIf = "selectedMenuItem">{{selectedMenuItem.description}}</p>
+                      <h6 class="m-0 text-capitalize">Ingredients :</h6>
+                      <p class="p-0" *ngIf = "selectedMenuItem">{{selectedMenuItem.ingredientList}}</p>
+                  </div>
+                  <div class="add-to-cart row justify-content-between align-items-center">
+                      <div class="col-8">
+                          <div class="float-left rec-price" *ngIf = "selectedMenuItem">₹ {{selectedMenuItem.price}}</div>
+                          <div class="set-amount float-right">
+                              <span class="decrease" (click)="decreaseCount()">-</span>
+                              <span class="amount">{{count}}</span>
+                              <span class="increase" (click)="increaseCount()">+</span>
+                          </div>
+                      </div>
+                      <button class="confirm-adding btn mybutton text-uppercase col-4">
+                          <span class="added">&#10004;  added</span>
+                          <span class="not-added" (click)="addToCart(selectedMenuItem)">add to basket</span>
+                      </button>
+                  </div>
+              </div>
+          </div>
+          <!--end row div-->
+      </div>
+      <!--end rec-dish div-->
+      <!--start more details div-->
+      <div class="more-details flipInX" data-wow-offset="10">
+          <div class="row no-gutters details-nav">
+              <div class="col-auto active" data-class=".more-description">
+                  <p class="text-center text-uppercase">DESCRIPTION</p>
+              </div>
+              <div class="col-auto" data-class=".more-ingredients">
+                  <p class="text-center text-uppercase">INGREDIENTS</p>
+              </div>
+              <div class="col-auto" data-class=".more-reviews">
+                  <p class="text-center text-uppercase">REVIEWS</p>
+              </div>
+              <div class="col-auto" data-class=".more-info">
+                  <p class="text-center text-uppercase">OTHER INFORMATION</p>
+              </div>
+          </div>
+          <div class="details-wrapper">
+              <div class="more-description">
+                  <h3>Description:</h3>
+                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pharetra enim quis arcu posuere iaculis. Donec ultricies, tellus id efficitur luctus, diam turpis varius nunc, sit amet gravida ligula arcu pellentesque leo. Etiam urna massa, mollis eget dapibus eget, bibendum porttitor dui </p>.
+                  <p> In laoreet libero quis nunc suscipit posuere. Aenean eget quam et diam malesuada venenatis in id ex. Curabitur nec felis pellentesque ipsum maximus tincidunt. Curabitur hendrerit sem mauris, quis auctor magna faucibus vitae. Donec eget ultrices lacus. Aliquam ornare urna non elit sodales, sed rutrum quam molestie.</p>
+              </div>
+              <div class="more-ingredients">
+                  <h3>Ingredients:</h3>
+                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pharetra enim quis arcu posuere iaculis. Donec ultricies, tellus id efficitur luctus, diam turpis varius nunc, sit amet gravida ligula arcu pellentesque leo. Etiam urna massa, mollis eget dapibus eget, bibendum porttitor dui </p>.
+                  <p> In laoreet libero quis nunc suscipit posuere. Aenean eget quam et diam malesuada venenatis in id ex. Curabitur nec felis pellentesque ipsum maximus tincidunt. Curabitur hendrerit sem mauris, quis auctor magna faucibus vitae. Donec eget ultrices lacus. Aliquam ornare urna non elit sodales, sed rutrum quam molestie.</p>
+              </div>
+              <div class="more-reviews">
+                  <h3>Reviews</h3>
+                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pharetra enim quis arcu posuere iaculis. Donec ultricies, tellus id efficitur luctus, diam turpis varius nunc, sit amet gravida ligula arcu pellentesque leo. Etiam urna massa, mollis eget dapibus eget, bibendum porttitor dui </p>.
+                  <p> In laoreet libero quis nunc suscipit posuere. Aenean eget quam et diam malesuada venenatis in id ex. Curabitur nec felis pellentesque ipsum maximus tincidunt. Curabitur hendrerit sem mauris, quis auctor magna faucibus vitae. Donec eget ultrices lacus. Aliquam ornare urna non elit sodales, sed rutrum quam molestie.</p>
+              </div>
+              <div class="more-info">
+                  <h3>Another Information:</h3>
+                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pharetra enim quis arcu posuere iaculis. Donec ultricies, tellus id efficitur luctus, diam turpis varius nunc, sit amet gravida ligula arcu pellentesque leo. Etiam urna massa, mollis eget dapibus eget, bibendum porttitor dui </p>.
+                  <p> In laoreet libero quis nunc suscipit posuere. Aenean eget quam et diam malesuada venenatis in id ex. Curabitur nec felis pellentesque ipsum maximus tincidunt. Curabitur hendrerit sem mauris, quis auctor magna faucibus vitae. Donec eget ultrices lacus. Aliquam ornare urna non elit sodales, sed rutrum quam molestie.</p>
+              </div>
+          </div>
+      </div>
+      <!--end more details div-->
+      <!--start From the menu-->
+      <h2 class="h1">From the menu</h2>
+      <div class="row no-gutters justify-content-between">
+          <div class="col-auto single-dish bounceInRight" data-wow-offset="10" *ngFor="let menuItem of menuService.menuItems">
+              <img class="" src={{menuItem.imageLink}} alt="">
+              <h4 class="dish-name">
+                  <img class="menu-symbol" src="assets/img/non.svg" alt="" *ngIf="menuItem.foodCategory == 'NON_VEGETARIAN'">
+                  <img class="menu-symbol" src="assets/img/veg.svg" alt="" *ngIf="menuItem.foodCategory == 'VEGETARIAN'">
+                  <img class="menu-symbol" src="assets/img/egg.svg" alt="" *ngIf="menuItem.foodCategory == 'EGGETERIAN'">
+                  {{menuItem.name}}
+              </h4>
+              <span class="dish-weight">{{menuItem.quantity}} g</span>
+              <span class="dot">.</span>
+              <span class="dish-energy">{{menuItem.calories}} cal</span>
+              <div class="line"></div>
+              <div class="price d-inline-block float-left">₹ {{menuItem.price}}</div>
+              <!--<span class="add float-right" ui-sref='menuItem({ itemId: menuItem.menuId })' (click)="selectMenuItem(menuItem)">+</span>-->
+              <span class="add float-right" (click)="selectMenuItem(menuItem)">+</span>
+              <div class="clearfix"></div>
+          </div>
+      </div>
+      <!--end From the menu-->
+  </div>
+</section>
+<!--end single-meal section-->
+

@@ -1,0 +1,86 @@
+<!--start cart section-->
+<section class="cart">
+  <div class="container">
+      <h2 class="h1">Your Cart</h2>
+      <div class="cart-wrapper">
+          <div class="cart-header">
+              <div class="row no-gutters text-uppercase justify-content-between">
+                  <div class="col-5 header-details">
+                      details
+                  </div>
+                  <div class="col-1 header-price">
+                      price
+                  </div>
+                  <div class="col-2 header-quantity">
+                      quantity
+                  </div>
+                  <div class="col-1 header-total-price">
+                      total price
+                  </div>
+              </div>
+          </div>
+          <hr>
+          <div class="cart-body">
+              <div class="row no-gutters justify-content-between single-order" *ngFor="let cartItem of cartItems">
+                  <div class="col-5 body-details">
+                      <img src={{cartItem.imageLink}} alt="" class="float-left d-inline-block">
+                      <div class="body-details-info d-inline-block ">
+                          <h3>{{cartItem.name}}</h3>
+                          <div class="body-details-features">
+                              <span class="dish-weight">{{cartItem.weight}} g</span>
+                              <span class="dot">.</span>
+                              <span class="dish-energy">{{cartItem.calories}} </span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-1 body-price">
+                      ₹ {{cartItem.price}}
+                  </div>
+                  <div class="col-2 body-quantity">
+                      <span class="ch-quantity remove" (click)="decreaseCartItem(cartItem)">-</span>
+                      <span class="cart-item-quantity">{{cartItem.quantity}}</span>
+                      <span class="ch-quantity add" (click)="increaseCartItem(cartItem)">+</span>
+                  </div>
+                  <div class="col-1 body-total-price">
+                      ₹ {{cartItem.totalPrice}}
+                  </div>
+                  <div class="d-inline-block float-right body-remove-item" (click)="deleteCartItem(cartItem)">
+                      <img src="assets/img/delete.svg" alt="">
+                  </div>
+              </div>
+          </div>
+          <div class="cart-calc text-capitalize" *ngIf="emptyCart">
+              Cart is empty
+              <br/>
+              Add some items to your cart
+          </div>
+          <hr>
+          <div class="cart-calc text-capitalize" *ngIf="!emptyCart">
+              <div class="row no-gutters justify-content-end">
+                  <div class="col-auto text-left">sub total</div>
+                  <div class="col-1 text-right" id="subTotal">₹ {{subTotal}}</div>
+              </div>
+              <div class="row no-gutters justify-content-end">
+                  <div class="col-auto text-left">tax</div>
+                  <div class="col-1 text-right">free</div>
+              </div>
+              <div class="row no-gutters justify-content-end">
+                  <div class="col-auto text-left">delivery</div>
+                  <div class="col-1 text-right">free</div>
+              </div>
+              <hr>
+              <div class="row no-gutters justify-content-end">
+                  <div class="col-auto text-left">total</div>
+                  <div class="col-1 text-right">₹ {{subTotal}}</div>
+              </div>
+          </div>
+          <div class="cart-footer">
+              <div class="row no-gutters justify-content-between">
+                  <button class="btn mybutton col-auto back-to-main text-uppercase" (click) = "continueShopping()" >continue shopping</button>
+                  <button class="btn mybutton col-auto complete text-uppercase" *ngIf="!emptyCart" (click)="completeOrder()">complete order</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!--end cart section-->
